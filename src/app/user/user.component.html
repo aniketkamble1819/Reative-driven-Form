@@ -1,0 +1,49 @@
+<div class="container">
+    <!-- <div class="row ">
+        <div class="col-lg-12 text-cener">
+            <h1 class="text-center">user</h1>
+        </div>
+        <div class="col-lg-8 form-group mx-auto">
+        
+            <label class="form-label" >Enter your name</label >
+            <input type="text" class="form-control" [(ngModel)]="name">
+            <br />
+            <label class="form-label">Enter your Email</label>
+            <input type="text" class="form-control"  [(ngModel)]="email" >
+            <br />
+            <label class="form-label">Enter your Mobile No.</label>
+            <input type="text" class="form-control"  [(ngModel)]="Mob" >
+            <br />
+            <button class="btn btn-primary" [disabled]="name == ' ' || email == ' ' || Mob == '' || posting"  (click)="submit()">submit</button>
+
+        
+
+        </div>
+    </div> -->
+
+     <div class="row ">
+        <div class="col-lg-12 text-cener">
+            <h1 class="text-center">user</h1>
+        </div>
+        <form [formGroup]="formgroup" (ngSubmit)="submit(formgroup.value)">
+       
+        <div class="col-lg-8 form-group mx-auto">
+        
+            <label class="form-label"  >Enter your name <span class="text-danger" *ngIf="formgroup.controls.name.touched && formgroup.controls.name.invalid">please your name</span></label >
+            <input type="text" class="form-control"  formControlName="name" placeholder="Enter your name">
+            <br />
+            <label class="form-label">Enter your Email <span class="text-danger" *ngIf="formgroup.controls.email.touched && formgroup.controls.email.invalid">please your email</span></label>
+            <input type="text" class="form-control" formControlName="email" placeholder="Enter your Email"   >
+            <br />
+            <label class="form-label">Enter your Mobile No. <span class="text-danger"        *ngIf="formgroup.controls.Mob.touched && formgroup.controls.Mob.invalid">please your mobile no</span></label>
+            <input type="text" class="form-control"  formControlName="Mob" placeholder="Enter your mobile no" >
+            <br />
+            <button class="btn btn-primary" type="submit" [disabled]="formgroup.invalid  ||posting">Save</button>
+
+        
+
+        </div>
+    </form>
+    </div> 
+</div>
+

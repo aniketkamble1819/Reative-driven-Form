@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1>Users</h1>
+    
+    </div>
+    <div class="col-lg-12">
+        <!-- <table class="table table-bordered">
+            
+            <tr>
+                <th>delete</th>
+                <th>id</th>
+                <th>images</th>
+                <th>price</th>
+                <th>category</th>
+         
+                <th>
+                    <p>rating</p>
+                    <span>rate</span>
+                    <span>count</span>
+
+                </th>
+                <th>Edit</th>
+            </tr>
+            <tr *ngFor="let user of Users; let i = index">
+                <td>
+                    <button class="btn btn-outline-denger bg-denger"  (click)="deleteUser(user.id)">X</button> 
+                </td>
+                <td>{{ user.id}}</td>
+                <td><img src="{{ user.image }}" alt="" width="75px"></td>
+                <td>{{ user.price }}</td>
+                <td>{{ user.category }}</td>
+             
+                <td>{{ user.rating | json}}</td>
+                <td> <button class="btn btn-outline-primary"  (click)="deleteUser(user.id)">Edit</button> </td>
+            </tr>
+        </table> -->
+    
+    </div>
+</div>
+
+
+<div class="col-lg-12">
+    <table class="table table-bordered">
+            
+        <tr>
+            <th>delete</th>
+            <th>id</th>
+            <th>images</th>
+            <th>name</th>
+            <th>mo.no</th>
+            <th> email </th>
+            <th>Edit</th>
+        </tr>
+        <tr *ngFor="let user of Users; let i = index">
+            <td>
+                <button class="btn btn-outline-denger bg-denger"  (click)="deleteUser(user.id)">X</button> 
+            </td>
+            <td>{{ user.id }}</td>
+            <td><img src="{{ user.avatar }}" alt="" width="75px"></td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.mob }}</td>
+         
+            <td>{{ user.email }}</td>
+            <td> <button class="btn btn-outline-primary" type="submit" routerLink="user/{{user.id}}" >Edit</button> </td>
+        </tr>
+    </table>
+
+</div>
